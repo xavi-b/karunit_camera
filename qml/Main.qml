@@ -6,6 +6,7 @@ import QtMultimedia 5.4
 Item {
     Camera {
         id: camera
+        objectName: "camera"
 //        position: Camera.BackFace
 
         videoRecorder {

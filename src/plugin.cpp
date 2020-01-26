@@ -42,11 +42,20 @@ bool KU_Camera_Plugin::stop()
 
 QWidget* KU_Camera_Plugin::createWidget()
 {
-    QQuickWidget* widget = new QQuickWidget;
-    widget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-//    widget->setSource(QUrl("qrc:/qml/Main.qml"));
-    widget->setSource(QUrl("/home/xavier/workspace/karunit_camera/qml/Main.qml"));
-    return widget;
+    this->cameraWidget = new QQuickWidget;
+    this->cameraWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+//    this->cameraWidget->setSource(QUrl("qrc:/qml/Main.qml"));
+    this->cameraWidget->setSource(QUrl("/home/xavier/workspace/karunit_camera/qml/Main.qml"));
+
+    QObject* camera = this->cameraWidget->findChild<QObject*>("camera");
+    if(camera)
+    {
+        QString deviceId = KU::Settings::instance()->value(this->id(), "deviceId", QString()).toString();
+        if(!deviceId.isEmpty())
+            camera->setProperty("deviceId", deviceId);
+    }
+
+    return this->cameraWidget;
 }
 
 QWidget* KU_Camera_Plugin::createSettingsWidget()
@@ -61,5 +70,9 @@ bool KU_Camera_Plugin::loadSettings()
 
 bool KU_Camera_Plugin::saveSettings() const
 {
+    QObject* camera = this->cameraWidget->findChild<QObject*>("camera");
+    if(camera)
+        KU::Settings::instance()->setValue(this->id(), "deviceId", camera->property("deviceId").toString());
+
     return KU::Settings::instance()->status() == QSettings::NoError;
 }

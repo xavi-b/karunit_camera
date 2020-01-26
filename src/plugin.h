@@ -30,6 +30,9 @@ public:
     virtual QWidget* createSettingsWidget() override;
     virtual bool loadSettings() override;
     virtual bool saveSettings() const override;
+
+private:
+    QQuickWidget* cameraWidget;
 };
 
 
