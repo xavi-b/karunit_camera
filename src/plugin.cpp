@@ -47,7 +47,7 @@ QWidget* KU_Camera_Plugin::createWidget()
 //    this->cameraWidget->setSource(QUrl("qrc:/qml/Main.qml"));
     this->cameraWidget->setSource(QUrl("/home/xavier/workspace/karunit_camera/qml/Main.qml"));
 
-    QObject* camera = this->cameraWidget->findChild<QObject*>("camera");
+    QObject* camera = this->cameraWidget->rootObject()->findChild<QObject*>("camera");
     if(camera)
     {
         QString deviceId = KU::Settings::instance()->value(this->id(), "deviceId", QString()).toString();
@@ -70,7 +70,7 @@ bool KU_Camera_Plugin::loadSettings()
 
 bool KU_Camera_Plugin::saveSettings() const
 {
-    QObject* camera = this->cameraWidget->findChild<QObject*>("camera");
+    QObject* camera = this->cameraWidget->rootObject()->findChild<QObject*>("camera");
     if(camera)
         KU::Settings::instance()->setValue(this->id(), "deviceId", camera->property("deviceId").toString());
 

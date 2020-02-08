@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QDateTime>
 #include <QQuickWidget>
+#include <QQuickItem>
 #include "plugininterface.h"
 #include "settings.h"
 

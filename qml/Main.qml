@@ -73,7 +73,7 @@ Item {
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         elide: Text.ElideRight
-                        color: "white"
+                        color: "orange"
                         font.bold: true
                         font.pixelSize: 14
                     }
