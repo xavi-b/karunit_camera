@@ -39,8 +39,7 @@ QWidget* KU_Camera_Plugin::createWidget()
 {
     this->cameraWidget = new QQuickWidget;
     this->cameraWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-    this->cameraWidget->setSource(QUrl("qrc:/qml/Main.qml"));
-//    this->cameraWidget->setSource(QUrl("/home/xavier/workspace/make_karunit/karunit_camera/qml/Main.qml"));
+    this->cameraWidget->setSource(QUrl("qrc:/karunit_camera/qml/Main.qml"));
 
     QObject* camera = this->cameraWidget->rootObject()->findChild<QObject*>("camera");
     if(camera)
