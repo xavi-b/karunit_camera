@@ -57,6 +57,11 @@ QWidget* KU_Camera_Plugin::createSettingsWidget()
     return new QLabel("Camera");
 }
 
+QWidget* KU_Camera_Plugin::createAboutWidget()
+{
+    return nullptr;
+}
+
 bool KU_Camera_Plugin::loadSettings()
 {
     return true;
