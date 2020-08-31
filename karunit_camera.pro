@@ -5,10 +5,10 @@ QT             += widgets qml quick quickwidgets
 TARGET          = karunit_camera_plugin
 DESTDIR         = $$PWD/../karunit/app/plugins
 
-LIBS += -L$$PWD/../karunit/plugininterface/ -lplugininterface
+LIBS += -L$$PWD/../karunit/plugininterface/ -lkarunit_plugininterface
 INCLUDEPATH += $$PWD/../karunit/plugininterface
 
-LIBS += -L$$PWD/../karunit/common/ -lcommon
+LIBS += -L$$PWD/../karunit/common/ -lkarunit_common
 INCLUDEPATH += $$PWD/../karunit/common
 
 LIBS += -L$$PWD/../karunit/third-party/xblog/lib -lxblog
