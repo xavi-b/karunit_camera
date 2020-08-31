@@ -37,7 +37,7 @@ Item {
     Popup {
         id: popup
 
-        anchors.centerIn: parent
+        //TODO anchors.centerIn: parent
         width:  parent.width - 50
         height: parent.height - 50
 
