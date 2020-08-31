@@ -68,7 +68,7 @@ Item {
 
                     Text {
                         text: modelData.displayName
-                        padding: 5
+                        //TODO padding: 5
 
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
