@@ -22,7 +22,7 @@ QString KU_Camera_Plugin::license() const
 
 QIcon KU_Camera_Plugin::icon() const
 {
-    return QIcon();
+    return QIcon::fromTheme("camera-video");
 }
 
 bool KU_Camera_Plugin::initialize()
