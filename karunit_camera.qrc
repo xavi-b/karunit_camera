@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/karunit_camera">
-        <file>qml/Main.qml</file>
+    <qresource prefix="/">
+        <file alias="karunit_camera/widget.qml">qml/widget.qml</file>
     </qresource>
 </RCC>
