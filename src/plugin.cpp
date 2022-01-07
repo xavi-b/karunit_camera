@@ -40,7 +40,7 @@ bool KU_Camera_Plugin::loadSettings()
     return true;
 }
 
-bool KU_Camera_Plugin::saveSettings() const
+bool KU_Camera_Plugin::saveSettings()
 {
     return true;
 }
